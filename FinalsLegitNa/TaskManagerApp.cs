@@ -75,12 +75,11 @@ namespace FinalsLegitNa
 
         private void GenerateFile()
         {
-            Console.WriteLine($"It seems like this is the 1st time you have opened this...\n" +
-                              $"Wait a moment while I generate the necessary file...");
+            Console.WriteLine("Generating the necessary files...");
 
             Directory.CreateDirectory(directory);
 
-            Console.WriteLine("I'm done generating the necessary file\n" +
+            Console.WriteLine("Files generated successfully.\n" +
                               "Press any key to continue...");
 
             Console.ReadKey();
@@ -317,7 +316,7 @@ namespace FinalsLegitNa
                     Console.Write("Input Verification Comments: ");
                     verificationComments = Console.ReadLine();
 
-                    valuesToUpdate[5] = $"Verified / {DateTime.Now} / Verifier Details: {verifierDetails} / Verification Comments: {verificationComments}";
+                    valuesToUpdate[5] = $"Verified / {DateTime.Now.ToString()} / Verifier Details: {verifierDetails} / Verification Comments: {verificationComments}";
                     UpdateStatus(valuesToUpdate);
                     break;
 
@@ -330,7 +329,7 @@ namespace FinalsLegitNa
                     Console.Write("Input Verification Comments: ");
                     fVerificationComments = Console.ReadLine();
 
-                    valuesToUpdate[5] = $"For Revision / {DateTime.Now} / Verifier Details: {fVerifierDetails} / Verification Comments: {fVerificationComments}";
+                    valuesToUpdate[5] = $"For Revision / {DateTime.Now.ToString()} / Verifier Details: {fVerifierDetails} / Verification Comments: {fVerificationComments}";
                     break;
 
                 default:
@@ -341,7 +340,7 @@ namespace FinalsLegitNa
 
         private void UpdateStatus(string[] valuesToUpdate)
         {
-            valuesToUpdate[4] = $"Close:({DateTime.Now})";
+            valuesToUpdate[4] = $"Closed:({DateTime.Now})";
         }
 
         private void PrintWelcomeMessage()
